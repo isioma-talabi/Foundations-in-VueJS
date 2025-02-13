@@ -7,10 +7,19 @@ const app = Vue.createApp({
          }
      },
 
+     computed: {
+        boxAClasses() {
+            return {active: this.boxASelected};
+            // computed can also be used to handle dynamic styling
+        }
+     },
+
+
      methods: {
         boxSelected(box) {
             if (box === "A") {
-                this.boxASelected = true;
+                this.boxASelected = !this.boxASelected; 
+                // This makes the box toggleable. Ironic but interesting!
             } else if (box === "B") {
                 this.boxBSelected = true;
             } else if (box === "C") {

@@ -19,12 +19,11 @@
     <section id="styling">
       <div
         class="demo"
-        :style="{borderColor: boxASelected ? 'red' : '#ccc'}"
+        v-bind:class="boxAClasses"
         v-on:click="boxSelected('A')"
       ></div>
       <div
-        class="demo"
-        :style="{borderColor: boxBSelected ? 'green' : '#ccc'}"
+        v-bind:class="['demo', {active: boxBSelected}]"
         v-on:click="boxSelected('B')"
       ></div>
       <div
